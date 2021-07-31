@@ -80,7 +80,7 @@ function validateMovie(movie) {
 }
 
 app.delete("/api/movies/:id", (req, res) => {
-  //Look up the course
+  //Look up the movie
   //Not exist, return 404
   const movie = movies.find((c) => c.id === parseInt(req.params.id));
   if (!movie) res.status(404).send("The movie with given id wasn't found");
@@ -89,7 +89,7 @@ app.delete("/api/movies/:id", (req, res) => {
   const index = movies.indexOf(movie);
   movies.splice(index, 1);
 
-  //Return Same Course
+  //Return Same movie
   res.send(movie);
 });
 
